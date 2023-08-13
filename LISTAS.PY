@@ -53,8 +53,11 @@ familia={12345687:"jose luis",
 familia["horacio"]=151566156,
 familia["marta"]=135615646
 
+print(familia)
+
 diccionario2={"jose":15151,"pedro":151511,"jazmin":1515}
 
 print(diccionario2.keys())
 print(diccionario2.values())
 print(diccionario2.items())
+
