@@ -116,7 +116,7 @@ class clases():
         self.urlDrive=urlDrive
 
 
-class docente():
+class usuario():
     nombre="",
     apellido="",
     dni=0,
@@ -185,7 +185,122 @@ class docente():
 
 
 
-         
+class MediosDeContacto():
+    id_mediosDeContacto=0,
+    fecha="",
+    email="",
+    telefono="",
+    direccion="",
+    nombre=""
 
 
+    def __init__(self,Id_mediosDeContacto,Fecha,Email,Telefono,Direccion,Nombre):
+        
+        self.id_mediosDeContacto=Id_mediosDeContacto
+        self.fecha=Fecha
+        self.email=Email
+        self.telefono=Telefono
+        self.direccion=Direccion
+        self.nombre=Nombre
+
+    
+    def getid_mediosDeContacto(self):
+        return self.id_mediosDeContacto
+    def getfecha(self):
+        return self.fecha
+    def getemail(self):
+        return self.email
+    def gettelefono(self):
+        return self.telefono
+    def getdireccion(self):
+        return self.direccion
+    def getnombre(self):
+        return self.nombre
+    
+    def setid_mediosDeContacto(self,id_mediosDeContacto):
+        self.id_mediosDeContacto=id_mediosDeContacto
+    def setfecha(self,fecha):
+        self.fecha=fecha
+    def setemail(self,email):
+        self.email=email
+    def settelefono(self,telefono):
+        self.telefono=telefono
+    def setdireccion(self,direccion):
+        self.direccion=direccion
+    def setnombre(self,nombre):
+        self.nombre=nombre
+
+class compra():
+    id_compra=0,
+    id_carrito_compra=0,
+    id_medios_pago=0,
+    id_usuarios=0,
+    fecha=""
+
+    def __init__(self,Id_compra,Id_carrito_compra,Id_usuaios,fecha):
+        self.id_compra=Id_compra
+        self.id_carrito_compra=Id_carrito_compra
+        self.id_usuarios=Id_usuaios
+        self.fecha=fecha
+
+    def getid_compra(self):
+        return self.id_compra
+    def getid_carrito_compra(self):
+        return self.id_carrito_compra
+    def getid_usuarios(self):
+        return self.id_usuarios
+    def getfecha(self):
+        return self.fecha
+    
+    def setid_compra(self,id_compra):
+        self.id_compra=id_compra
+    def setid_carrito_compra(self,id_carrito_compra):
+        self.id_carrito_compra=id_carrito_compra
+    def setid_usuarios(self,id_usuarios):
+        self.id_usuarios=id_usuarios
+    def setfecha(self,fecha):
+        self.fecha=fecha
+        
+
+class TiposDeContacto(MediosDeContacto):
+
+    def __init__(self, Id_mediosDeContacto, Fecha, Email, Telefono, Direccion, Nombre,whatsapp,correoElectronico,callcenter,referidointerno):
+        MediosDeContacto.__init__(Id_mediosDeContacto, Fecha, Email, Telefono, Direccion, Nombre)
+        self.whatsapp=whatsapp
+        self.correoElectronico=correoElectronico
+        self.callcenter=callcenter
+        self.referidointerno=referidointerno
+
+    def getwhatsapp(self):
+        return self.whatsapp
+    def getcorreoElectronico(self):
+        return self.correoElectronico
+    def getcallcenter(self):
+        return self.callcenter
+    def getreferidointerno(self):
+        return self.referidointerno
+    
+    def setwhatsapp(self,whatsapp):
+        self.whatsapp=whatsapp
+    def setcorreoElectronico(self,correoElectronico):
+        self.correoElectronico=correoElectronico
+    def setcallcenter(self,callcenter):
+        self.callcenter=callcenter
+
+class docente(usuario):
+
+    def __init__(self, Nombre, Apellido, Dni, Direccion, FechaNacimiento, Localidad, CPostal, Provincia, Telefono, Mail,id_docente,materiasEnseñadas):
+        usuario.__init__(Nombre, Apellido, Dni, Direccion, FechaNacimiento, Localidad, CPostal, Provincia, Telefono, Mail)
+        self.id_docente=id_docente
+        self.materiasEnseñadas=materiasEnseñadas
+
+    def getid_docente(self):
+        return self.id_docente
+    def getmarteriasEnseñadas(self):
+        return self.materiasEnseñadas
+    
+    def setid_docente(self,id_docente):
+        self.id_docente=id_docente
+    def setmateriasEnseñadas(self,materiasEnseñadas):
+        self.materiasEnseñadas=materiasEnseñadas
         
